@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SIAK-Klinis Dashboard</title>
-    <!-- Tailwind CSS via CDN untuk kemudahan styling tanpa konfigurasi postcss rumit -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -13,6 +12,14 @@
         background-color: #f8fafc;
       }
     </style>
+    <!-- Polyfill aman untuk process.env agar tidak white screen di browser -->
+    <script>
+      window.process = {
+        env: {
+          NODE_ENV: 'production'
+        }
+      };
+    </script>
   <script type="importmap">
 {
   "imports": {
@@ -30,7 +37,6 @@
 </head>
   <body>
     <div id="root"></div>
-    <!-- Entry point mengarah ke index.tsx -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
