@@ -23,7 +23,7 @@ export const analyzeMedicalImage = async (base64Image: string, prompt: string): 
   
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-image',
+      model: 'gemini-2.5-flash',
       contents: {
         parts: [
           {
